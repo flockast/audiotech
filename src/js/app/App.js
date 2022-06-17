@@ -24,10 +24,9 @@ import ContactsMap from '../pages/Contacts/ContactsMap.js'
 
 class App {
   constructor () {
-    this._init()
-      .then(() => {
-        // console.log('success')
-      })
+    (async () => {
+      await this._init()
+    })()
   }
 
   async _init () {
