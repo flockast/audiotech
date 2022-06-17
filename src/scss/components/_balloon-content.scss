@@ -1,0 +1,15 @@
+.balloon-content {
+  &__block {
+    margin-bottom: 2rem;
+    font-family: $font-family;
+    @include text-body();
+
+    &--title {
+      font-weight: 500;
+    }
+
+    a {
+      color: $color-primary;
+    }
+  }
+}

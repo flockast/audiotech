@@ -1,0 +1,36 @@
+.icon-check {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 1.5rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      path {
+        fill: $secondary-color-darken
+      }
+    }
+  }
+
+  &__text {
+    color: $secondary-color-darken;
+  }
+
+  &.is-active {
+    .icon-check__icon {
+      svg path {
+        fill: $color-primary;
+      }
+    }
+
+    .icon-check__text {
+      color: $color-primary;
+    }
+  }
+}

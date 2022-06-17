@@ -1,0 +1,80 @@
+.pswp__bg {
+  background-color: rgba($color-primary, 60%);
+}
+
+.pswp__top-bar, .pswp__caption {
+  background-color: initial;
+}
+
+.pswp__button {
+  z-index: 1000000;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: $secondary-color-light !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  overflow: hidden;
+  transition: .125s ease-in-out;
+
+  &:before {
+    display: none !important;
+  }
+
+  svg path {
+    fill: $color-primary;
+  }
+
+  &:hover {
+    background: $color-accent !important;
+
+    svg path {
+      fill: $color-primary-inverse;
+    }
+  }
+
+  &--arrow--right {
+    right: 3rem;
+  }
+
+  &--arrow--left {
+    left: 3rem;
+  }
+
+  &--close {
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  display: none;
+
+  @include md-block () {
+    display: flex;
+  }
+}
+
+.pswp__dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pswp__dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: $secondary-color-medium;
+
+  &.is-active {
+    background-color: $color-accent;
+  }
+}

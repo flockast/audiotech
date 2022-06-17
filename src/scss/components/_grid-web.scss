@@ -1,0 +1,24 @@
+.grid-web {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    border: 1px solid $secondary-color-medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1px;
+    margin-left: -1px;
+    height: 18rem;
+    width: calc(100% + 1px);
+
+    @include sm-block () {
+      width: calc(50% + 1px);
+      height: 24rem;
+    }
+
+    @include md-block () {
+      width: calc(33.3333333% + 1px);
+    }
+  }
+}

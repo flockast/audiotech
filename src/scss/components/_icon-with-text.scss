@@ -1,0 +1,52 @@
+.icon-with-text {
+  display: flex;
+  align-items: center;
+
+  &__wrap {
+    margin-right: 2rem;
+  }
+
+  &__text {
+    font-weight: 500;
+  }
+
+  &__icon {
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid $secondary-color-medium;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+.icon-with-text-list {
+  @include sm-block() {
+    @include row-flex();
+  }
+
+  @include md-block() {
+    display: block;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    @include sm-block() {
+      @include col();
+      @include size-sm(6);
+    }
+
+    @include md-block() {
+      width: auto;
+    }
+  }
+}

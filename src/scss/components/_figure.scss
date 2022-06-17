@@ -1,0 +1,10 @@
+.figure {
+  &__image, img {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  &__caption, figcaption {
+    color: $secondary-color-darken;
+  }
+}

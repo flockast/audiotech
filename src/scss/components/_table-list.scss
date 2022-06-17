@@ -1,0 +1,72 @@
+.table-list {
+  width: 100%;
+  border-top: 1px solid $secondary-color-medium;
+
+  @include md-block () {
+    display: table;
+  }
+
+  &__tr {
+    border-bottom: 1px solid $secondary-color-medium;
+    padding: 1.8rem 0;
+    @include grid();
+    grid-row-gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include sm-block () {
+      grid-row-gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include md-block () {
+      display: table-row;
+      border-bottom: none;
+    }
+  }
+
+  &__td {
+    &:nth-child(1) {order: 1}
+    &:nth-child(2) {order: 2}
+    &:nth-child(3) {order: 3}
+    &:nth-child(4) {order: 4}
+
+    &:not(:last-child) {
+      @include md(padding-right, $offset_md_one_side);
+      @include lg(padding-right, $offset_lg_one_side);
+    }
+
+    &:not(:first-child) {
+      @include md(padding-left, $offset_md_one_side);
+      @include lg(padding-left, $offset_lg_one_side);
+    }
+
+    @include sm-block () {
+      &:nth-child(1) {order: 1}
+      &:nth-child(2) {order: 3}
+      &:nth-child(3) {order: 2}
+      &:nth-child(4) {order: 4}
+    }
+
+    @include md-block () {
+      padding: 1.8rem 0;
+      display: table-cell;
+      border-bottom: 1px solid $secondary-color-medium;
+
+      &:nth-child(1) {
+        @include md(width, 33.333333%);
+      }
+
+      &:nth-child(2) {
+        @include md(width, 30%);
+      }
+    }
+  }
+
+  a {
+    color: $color-primary;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}

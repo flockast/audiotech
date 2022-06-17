@@ -1,0 +1,21 @@
+.at-social-button {
+  display: block;
+  background-color: $color-primary-inverse;
+  padding: 1.8rem 2.5rem;
+  color: $color-primary;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+
+  &__title {
+    display: block;
+    text-align: center;
+  }
+
+  &__icon {
+    position: absolute;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}

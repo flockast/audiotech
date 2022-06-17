@@ -1,0 +1,53 @@
+.single-slider {
+  margin: 0 -3rem;
+  padding:  0 3rem;
+
+  @include sm-block() {
+    margin: 0 -6.4rem;
+    padding:  0 6.4rem;
+  }
+
+  @include md-block() {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 3rem;
+    @include sm(margin-top, 4.5rem);
+    @include md(margin-top, 3rem);
+
+    .nav-button {
+      display: none;
+      @include md(display, flex);
+    }
+  }
+}
+
+.single-slider-pagination {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 .5rem;
+    background-color: $secondary-color-medium;
+    border-radius: 50%;
+
+    &-active {
+      background-color: $color-accent;
+    }
+  }
+}
+
+.single-slider-slide {
+  cursor: grab;
+
+  img {
+    width: 100%;
+  }
+}

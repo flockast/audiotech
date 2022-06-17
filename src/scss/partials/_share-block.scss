@@ -1,0 +1,38 @@
+.at-share {
+  background-color: $secondary-color-light;
+  padding: 4rem 4rem 5.2rem;
+
+  @include sm-block () {
+    padding: 4rem 4rem 4.2rem;
+  }
+
+  @include lg-block () {
+    padding: 4rem 4.5rem 4.2rem;
+  }
+
+  &__title {
+    @include subtitle-bold();
+    margin-bottom: 3rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+
+    @include sm-block () {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include md-block () {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-block () {
+      grid-column-gap: 3rem;
+    }
+
+    li {}
+  }
+}

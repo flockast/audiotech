@@ -1,0 +1,32 @@
+.at-breadcrumbs {
+  margin-bottom: 1.5rem;
+  display: none;
+  @include md(display, block);
+
+  &__list {
+    display: flex;
+    li {
+      color: $secondary-color-darken;
+      @include caption();
+      &:nth-child(n+2) {
+        position: relative;
+        padding-left: calc(1rem + 10px);
+        margin-left: 1rem;
+        &:before {
+          content: '→';
+          position: absolute;
+          left: 0;
+          display: block;
+        }
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+}
+

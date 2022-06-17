@@ -1,0 +1,231 @@
+/*
+* Justify content
+*/
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+
+.sm\:justify-center { @include sm(justify-content, center); }
+.sm\:justify-between { @include sm(justify-content, space-between); }
+.sm\:justify-around { @include sm(justify-content, space-around); }
+.sm\:justify-start { @include sm(justify-content, flex-start); }
+.sm\:justify-end { @include sm(justify-content, flex-end); }
+
+.md\:justify-center { @include md(justify-content, center); }
+.md\:justify-between { @include md(justify-content, space-between); }
+.md\:justify-around { @include md(justify-content, space-around); }
+.md\:justify-start { @include md(justify-content, flex-start); }
+.md\:justify-end { @include md(justify-content, flex-end); }
+
+.lg\:justify-center { @include lg(justify-content, center); }
+.lg\:justify-between { @include lg(justify-content, space-between); }
+.lg\:justify-around { @include lg(justify-content, space-around); }
+.lg\:justify-start { @include lg(justify-content, flex-start); }
+.lg\:justify-end { @include lg(justify-content, flex-end); }
+
+/*
+* Align items
+*/
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+.items-baseline { align-items: baseline; }
+
+.sm\:items-start { @include sm(align-items, flex-start); }
+.sm\:items-center { @include sm(align-items, center); }
+.sm\:items-end { @include sm(align-items, flex-end); }
+.sm\:items-stretch { @include sm(align-items, stretch); }
+.sm\:items-baseline { @include sm(align-items, baseline); }
+
+.md\:items-start { @include md(align-items, flex-start); }
+.md\:items-center { @include md(align-items, center); }
+.md\:items-end { @include md(align-items, flex-end); }
+.md\:items-stretch { @include md(align-items, stretch); }
+.md\:items-baseline { @include md(align-items, baseline); }
+
+.lg\:items-start { @include lg(align-items, flex-start); }
+.lg\:items-center { @include lg(align-items, center); }
+.lg\:items-end { @include lg(align-items, flex-end); }
+.lg\:items-stretch { @include lg(align-items, stretch); }
+.lg\:items-baseline { @include lg(align-items, baseline); }
+
+/*
+* Text Align
+*/
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.sm\:text-left { @include sm(text-align, left) }
+.sm\:text-center { @include sm(text-align, center) }
+.sm\:text-right { @include sm(text, right) }
+
+.md\:text-left { @include md(text-align, left) }
+.md\:text-center { @include md(text-align, center) }
+.md\:text-right { @include md(text-align, right) }
+
+.lg\:text-left { @include lg(text-align, left) }
+.lg\:text-center { @include lg(text-align, center) }
+.lg\:text-right { @include lg(text-align, right) }
+
+/*
+* Display
+*/
+.d-flex { display: flex; }
+.d-block { display: block; }
+.d-none { display: none; }
+
+.sm\:d-flex { @include sm(display, flex) }
+.sm\:d-block { @include sm(display, block) }
+.sm\:d-none { @include sm(display, none) }
+
+.md\:d-flex { @include md(display, flex) }
+.md\:d-block { @include md(display, block) }
+.md\:d-none { @include md(display, none) }
+
+.lg\:d-flex { @include lg(display, flex) }
+.lg\:d-block { @include lg(display, block) }
+.lg\:d-none { @include lg(display, none) }
+
+/*
+* Margin
+*/
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .mt-#{slash-dots($value)} { margin-top: 1rem * ($value); }
+  .mr-#{slash-dots($value)} { margin-right: 1rem * ($value); }
+  .mb-#{slash-dots($value)} { margin-bottom: 1rem * ($value); }
+  .ml-#{slash-dots($value)} { margin-left: 1rem * ($value); }
+}
+
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .sm\:mt-#{slash-dots($value)} { @include sm(margin-top, 1rem * ($value)); }
+  .sm\:mr-#{slash-dots($value)} { @include sm(margin-right, 1rem * ($value)); }
+  .sm\:mb-#{slash-dots($value)} { @include sm(margin-bottom, 1rem * ($value)); }
+  .sm\:ml-#{slash-dots($value)} { @include sm(margin-left, 1rem * ($value)); }
+}
+
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .md\:mt-#{slash-dots($value)} { @include md(margin-top, 1rem * ($value)); }
+  .md\:mr-#{slash-dots($value)} { @include md(margin-right, 1rem * ($value)); }
+  .md\:mb-#{slash-dots($value)} { @include md(margin-bottom, 1rem * ($value)); }
+  .md\:ml-#{slash-dots($value)} { @include md(margin-left, 1rem * ($value)); }
+}
+
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .lg\:mt-#{slash-dots($value)} { @include lg(margin-top, 1rem * ($value)); }
+  .lg\:mr-#{slash-dots($value)} { @include lg(margin-right, 1rem * ($value)); }
+  .lg\:mb-#{slash-dots($value)} { @include lg(margin-bottom, 1rem * ($value)); }
+  .lg\:ml-#{slash-dots($value)} { @include lg(margin-left, 1rem * ($value)); }
+}
+
+/*
+* Padding
+*/
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .pt-#{slash-dots($value)} { padding-top: 1rem * ($value); }
+  .pr-#{slash-dots($value)} { padding-right: 1rem * ($value); }
+  .pb-#{slash-dots($value)} { padding-bottom: 1rem * ($value); }
+  .pl-#{slash-dots($value)} { padding-left: 1rem * ($value); }
+}
+
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .sm\:pt-#{slash-dots($value)} { @include sm(padding-top, 1rem * ($value)); }
+  .sm\:pr-#{slash-dots($value)} { @include sm(padding-right, 1rem * ($value)); }
+  .sm\:pb-#{slash-dots($value)} { @include sm(padding-bottom, 1rem * ($value)); }
+  .sm\:pl-#{slash-dots($value)} { @include sm(padding-left, 1rem * ($value)); }
+}
+
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .md\:pt-#{slash-dots($value)} { @include md(padding-top, 1rem * ($value)); }
+  .md\:pr-#{slash-dots($value)} { @include md(padding-right, 1rem * ($value)); }
+  .md\:pb-#{slash-dots($value)} { @include md(padding-bottom, 1rem * ($value)); }
+  .md\:pl-#{slash-dots($value)} { @include md(padding-left, 1rem * ($value)); }
+}
+
+@for $i from 0 to 21 {
+  $value: $i * 0.5;
+  .lg\:pt-#{slash-dots($value)} { @include lg(padding-top, 1rem * ($value)); }
+  .lg\:pr-#{slash-dots($value)} { @include lg(padding-right, 1rem * ($value)); }
+  .lg\:pb-#{slash-dots($value)} { @include lg(padding-bottom, 1rem * ($value)); }
+  .lg\:pl-#{slash-dots($value)} { @include lg(padding-left, 1rem * ($value)); }
+}
+@for $i from 0 to 11 {
+  .py-#{$i} {
+    padding-top: 1rem * ($i);
+    padding-bottom: 1rem * ($i);
+  }
+  .px-#{$i} {
+    padding-right: 1rem * ($i);
+    padding-left: 1rem * ($i);
+  }
+}
+
+/*
+* Position
+*/
+.p-relative { position: relative; }
+.p-absolute { position: absolute; }
+.p-static { position: static; }
+
+.sm\:p-relative { @include sm(position, relative)}
+.sm\:p-absolute { @include sm(position, absolute)}
+.sm\:p-static { @include sm(position, static)}
+
+.md\:p-relative { @include md(position, relative)}
+.md\:p-absolute { @include md(position, absolute)}
+.md\:p-static { @include md(position, static)}
+
+.lg\:p-relative { @include lg(position, relative)}
+.lg\:p-absolute { @include lg(position, absolute)}
+.lg\:p-static { @include lg(position, static)}
+
+/*
+* Border
+*/
+.border-top { border-top: 1px solid $secondary-color-medium; }
+.border-right { border-right: 1px solid $secondary-color-medium; }
+.border-bottom { border-bottom: 1px solid $secondary-color-medium; }
+.border-left { border-left: 1px solid $secondary-color-medium; }
+
+/*
+* Colors
+ */
+.color-grey-1 { color: $secondary-color-light; }
+.color-grey-2 { color: $secondary-color-medium; }
+.color-grey-3 { color: $secondary-color-dark; }
+.color-grey-4 { color: $secondary-color-darken; }
+.color-accent { color: $color-accent; }
+.color-success { color: $color-success; }
+.color-danger { color: $color-danger; }
+.color-info { color: $color-info; }
+
+/*
+* Width
+ */
+.w-full { width: 100%; }
+.w-1\/2 { width: 50%; }
+.w-auto { width: auto; }
+
+.sm\:w-full { @include sm(width, 100%); }
+.sm\:w-auto { @include sm(width, auto); }
+
+.md\:w-full { @include md(width, 100%); }
+.md\:w-auto { @include md(width, auto); }
+
+.lg\:w-full { @include lg(width, 100%); }
+.lg\:w-auto { @include lg(width, auto); }
+
+/*
+* Width
+ */
+.ws-break-spaces { white-space: break-spaces; }

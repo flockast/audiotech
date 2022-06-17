@@ -1,0 +1,36 @@
+.at-fill-card {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color-light;
+  padding: 3rem;
+  min-height: 32rem;
+  text-decoration: none;
+  @include lg(min-height, 37rem);
+
+  &__title {
+    margin-bottom: 2rem;
+    color: $color-primary;
+    @include subtitle-bold();
+  }
+
+  &__description {
+    color: $secondary-color-darken;
+    overflow: hidden;
+    max-height: 14rem;
+    @include lg(max-height, 19rem);
+  }
+
+  &__link {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2rem;
+    color: $color-primary;
+  }
+
+  &:hover {
+    .at-fill-card__link {
+      color: $color-accent
+    }
+  }
+}

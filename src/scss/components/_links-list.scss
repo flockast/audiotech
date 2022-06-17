@@ -1,0 +1,51 @@
+.at-links-list {
+  li {
+    border-bottom: 1px solid $secondary-color-medium;
+    &:first-child {
+      border-top: 1px solid $secondary-color-medium;
+    }
+    &.not-first {
+      border-top: none;
+      @include md(border-top,1px solid $secondary-color-medium);
+    }
+    a {
+      position: relative;
+      display: block;
+      padding: 1.6rem 0;
+      text-decoration: none;
+      color: $color-primary;
+      @include subtitle();
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2.4rem;
+        height: 2.4rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.3431 4.92893L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L13.3431 19.0711C12.9526 19.4616 12.3195 19.4616 11.9289 19.0711C11.5384 18.6805 11.5384 18.0474 11.9289 17.6568L16.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H16.5858L11.9289 6.34314C11.5384 5.95261 11.5384 5.31945 11.9289 4.92893C12.3195 4.5384 12.9526 4.5384 13.3431 4.92893Z' fill='%23#{str-replace('#{$color-primary}', '#', '')}'/%3E%3C/svg%3E%0A");
+        transition: .125s ease-in-out;
+
+        @include md-block () {
+          right: 1rem;
+        }
+      }
+
+      &:hover {
+        color: $color-accent;
+
+        &:after {
+          @include md-block () {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.3431 4.92893L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L13.3431 19.0711C12.9526 19.4616 12.3195 19.4616 11.9289 19.0711C11.5384 18.6805 11.5384 18.0474 11.9289 17.6568L16.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H16.5858L11.9289 6.34314C11.5384 5.95261 11.5384 5.31945 11.9289 4.92893C12.3195 4.5384 12.9526 4.5384 13.3431 4.92893Z' fill='%23#{str-replace('#{$color-accent}', '#', '')}'/%3E%3C/svg%3E%0A");
+            transform: translateX(1rem);
+          }
+        }
+      }
+    }
+  }
+
+  &--continue {
+    li {
+
+    }
+  }
+}

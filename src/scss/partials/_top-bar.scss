@@ -1,0 +1,97 @@
+.at-top-bar {
+  display: none;
+  @include md(display, block);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid $secondary-color-medium;
+  }
+}
+
+.at-top-bar-menu {
+  display: flex;
+
+  li {
+    margin-right: 30px;
+
+    a {
+      display: block;
+      color: $secondary-color-darken;
+      text-decoration: none;
+      @include caption-upper();
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &.is-active {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+.at-top-bar-info {
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-left: 20px;
+
+    a {
+      display: block;
+      color: $secondary-color-darken;
+      text-decoration: none;
+      @include text-body();
+
+      svg path {
+        fill: $secondary-color-darken;
+      }
+
+      &.is-active {
+        color: $color-accent;
+
+        svg path {
+          fill: $color-accent;
+        }
+      }
+
+      &:hover {
+        color: $color-primary;
+
+        svg path {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+.at-user-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.at-cart-icon {
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+
+  &__badge {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: $color-accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: $color-primary-inverse;
+    font-size: .9rem;
+  }
+}

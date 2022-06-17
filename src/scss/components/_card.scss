@@ -1,0 +1,186 @@
+.at-card {
+  display: flex;
+  flex-direction: column;
+  color: $color-primary;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__image {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #f6f7fb;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 22rem;
+      object-fit: cover;
+      transition: .2s ease-in-out;
+
+      @include lg-block () {
+        height: 27rem;
+      }
+    }
+  }
+
+  &__content {
+    background: $secondary-color-light;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    min-height: 12rem;
+    @include sm(padding-bottom, 3rem);
+  }
+
+  &__badge {
+    position: absolute;
+    z-index: 1;
+    top: 1.5rem;
+    left: 1.5rem;
+    display: block;
+    padding: .85rem 1.5rem;
+    text-decoration: none;
+    color: $color-primary-inverse;
+    background-color: $color-accent;
+    @include caption-upper();
+    font-weight: 500;
+
+    //&:hover {
+    //  background-color: $color-accent-dark;
+    //  color: $color-primary-inverse;
+    //}
+  }
+
+  &__title {
+    display: block;
+    min-height: 4.7rem;
+    padding-top: 2rem;
+    color: $color-primary;
+    @include subtitle-bold();
+    @include sm-block () {
+      min-height: 6rem;
+      padding-top: 3rem;
+    }
+  }
+
+  &__description {
+    display: block;
+    min-height: 7.2rem;
+    margin-top: 1.5rem;
+    color: $secondary-color-darken;
+    @include text-body();
+    @include sm-block () {
+      margin-top: 2rem;
+    }
+  }
+
+  &__body {
+    display: block;
+    margin-top: 1.5rem;
+    color: $secondary-color-darken;
+    @include text-body();
+    @include sm-block () {
+      margin-top: 2rem;
+    }
+  }
+
+  &__price {
+    display: block;
+    margin-top: 2rem;
+    color: $color-primary;
+    @include subtitle-bold();
+  }
+
+  &__buttons {
+    margin-top: auto;
+    display: flex;
+    padding-top: 3rem;
+    align-items: baseline;
+
+    .button:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+
+  &__properties {
+    margin-top: 2rem;
+    color: $secondary-color-darken;
+
+    li {
+      margin-top: 1.5rem;
+
+      a {
+        color: $secondary-color-darken;
+
+        &:hover {
+          color: $color-accent;
+        }
+      }
+    }
+  }
+
+  &__more {
+    margin-top: 2rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &:hover {
+    .at-card__image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .at-card__title {
+      color: $color-accent;
+    }
+  }
+
+  &--large {
+    .at-card__image {
+      img {
+        height: 22rem;
+        @include sm(height, 40rem);
+        @include md(height, 34rem);
+        @include lg(height, 42rem);
+      }
+    }
+
+    .at-card__title {
+      @include sm-block () {
+        @include title-h3();
+      }
+    }
+
+    .at-card__buttons {
+      padding-top: 2rem;
+
+      @include sm-block () {
+        padding-top: 4.5rem;
+      }
+    }
+  }
+
+  &--dark {
+    .at-card__description {
+      color: $color-primary;
+    }
+  }
+
+  &--full-height {
+    height: 100%;
+  }
+}

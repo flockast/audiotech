@@ -1,0 +1,13 @@
+.at-form {
+  &__content {
+    margin-bottom: 4rem;
+    @include sm(margin-bottom, 6rem);
+  }
+
+  &__bottom {
+    .button {
+      width: 100%;
+      @include sm(width, auto);
+    }
+  }
+}

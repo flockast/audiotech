@@ -1,0 +1,42 @@
+.at-social-list {
+  display: flex;
+
+  li {
+    margin-right: 2rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      border: 2px solid rgba(#FFFFFF, .3);
+      transition: .2s ease-in-out;
+
+      svg path {
+        transition: .2s ease-in-out;
+        fill: $color-primary-inverse;
+      }
+
+      &:hover {
+
+        svg path {
+          fill: $color-accent;
+        }
+      }
+    }
+  }
+
+  &--dark {
+    li {
+      a {
+        border-color: $secondary-color-medium;
+
+        svg path {
+          fill: $color-primary;
+        }
+      }
+    }
+  }
+}

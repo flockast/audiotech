@@ -1,0 +1,23 @@
+.at-digits-list {
+  @include grid();
+  grid-row-gap: 4rem;
+  @include sm-block{
+    grid-row-gap: 6rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include md-block{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.at-digit-item {
+  &__title {
+    display: block;
+    margin-bottom: .5rem;
+    @include text-large();
+  }
+
+  &__desc {
+    @include subtitle();
+  }
+}

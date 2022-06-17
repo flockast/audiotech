@@ -1,0 +1,138 @@
+.input-field {
+  position: relative;
+
+  &__label {
+    display: block;
+    margin-bottom: 1rem;
+    @include caption-upper();
+
+    span {
+      color: $color-danger;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      width: 4.8rem;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .7) 30%, #ffffff 50%);
+    }
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 1.7rem 2.5rem;
+    border: 1px solid $secondary-color-medium;
+    color: $color-primary;
+    background: #fff;
+
+    &::placeholder {
+      color: $secondary-color-darken;
+    }
+
+    &:focus {
+      border-color: $color-accent;
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    margin-top: -1.2rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  &--mb {
+    margin-bottom: 3rem;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    height: 120px;
+    padding: 1.7rem 2.4rem;
+    border: 1px solid $secondary-color-medium;
+    resize: none;
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+  }
+
+  &__icons {
+    position: absolute;
+    right: 2rem;
+    bottom: 1.8rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    display: block;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__icon-on {
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+
+    svg path {
+      fill: $secondary-color-darken;
+    }
+  }
+
+  &__icon-off {
+    display: none;
+    width: 2.4rem;
+    height: 2.4rem;
+
+    svg path {
+      fill: $secondary-color-darken;
+    }
+  }
+
+  &--password {
+    position: relative;
+
+    input {
+      padding-right: 5.5rem;
+
+      &:focus + .input-field__icons .input-field__icon-on svg path { fill: $color-primary; }
+      &:focus + .input-field__icons .input-field__icon-off svg path { fill: $color-primary; }
+    }
+  }
+
+  &.password-show {
+    .input-field__icon-on { display: none; }
+    .input-field__icon-off { display: block; }
+  }
+
+  &--with-icon {
+    .input-field__wrap {
+      &:after {
+        width: 7rem;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, .7) 20%, #ffffff 50%);
+      }
+    }
+
+    input {
+      padding-right: 4.8rem;
+    }
+  }
+}

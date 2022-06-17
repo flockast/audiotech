@@ -1,0 +1,262 @@
+.at-cart-container {
+  flex-direction: column;
+  @include md('flex-direction', row);
+
+  .at-cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-right: 0;
+    @include md(margin-right, 4rem);
+
+    &-head {
+      display: none;
+      justify-content: flex-start;
+      @include sm('display', flex);
+
+      &-item {
+        font-weight: 500;
+        font-size: 11px;
+        text-transform: uppercase;
+        padding-bottom: .5rem;
+
+        &.product {
+          flex: 0 0 59%;
+          @include lg(flex, 0 0 65%)
+        }
+
+        &.price {
+          flex: 0 0 25%;
+          @include lg(flex, 0 0 23%)
+        }
+
+        &.sum {
+          flex: 0 0 12%;
+        }
+      }
+    }
+
+    &-body {
+      .at-cart-table-row {
+        display: flex;
+        padding: 2rem 0;
+        flex-direction: column;
+
+        @include sm(border-top, none);
+        @include sm(flex-direction, row);
+        @include sm(padding, 1.8rem 0);
+
+        .at-cart-subitem {
+          flex-direction: column;
+
+          .label {
+            @include sm(display, none);
+            display: block;
+            padding-bottom: 1rem;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+          }
+
+          .group {
+            display: flex;
+
+            .title {
+              padding-left: 2rem;
+              padding-right: 0;
+              @include sm(padding-right, 4rem)
+            }
+
+            img {
+              width: 100%;
+              height: auto;
+              max-width: 140px;
+              max-height: 100px;
+              @include sm(max-width, 120px);
+              @include sm(max-height, 90px);
+
+            }
+          }
+
+
+          &.product {
+            display: flex;
+            flex: 0 0 59%;
+            @include lg(flex, 0 0 65%)
+          }
+
+          &.price {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            p {
+              margin: 0;
+            }
+          }
+
+          &.sum {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+
+          .quantity {
+            button {
+              display: flex;
+              padding: 0;
+              border: none;
+              background-color: transparent;
+
+              svg {
+                width: 40px;
+                height: 40px;
+                padding: 7px;
+                background-color: $secondary-color-light;
+                border-radius: 50px;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: $color-accent;
+
+                  path {
+                    fill: #fff;
+                  }
+                }
+              }
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            .delete {
+              background-color: transparent;
+              border-radius: 0;
+            }
+
+            .count {
+              width: 6.2rem;
+              text-align: center;
+              @include sm(width, 4rem);
+
+              &.without-padding {
+                width: 100%;
+                text-align: left;
+              }
+            }
+          }
+
+          .delete {
+            width: 26px;
+            height: 26px;
+            margin-bottom: -9.3rem;
+            left: auto;
+            @include sm(margin-bottom, -7.7rem);
+            @include sm(left, -0.5rem);
+            cursor: pointer;
+
+            &:hover {
+              path {
+                fill: $color-accent;
+              }
+            }
+          }
+        }
+
+        .group-item {
+          position: relative;
+          display: flex;
+          justify-content: flex-start;
+          flex: 0 0 40%;
+          padding-top: 2rem;
+          @include sm(flex, 0 0 38%);
+          @include sm(padding-top, 0);
+          @include sm(justify-content, space-between);
+
+          .at-cart-subitem {
+
+            &.price {
+              flex: 0 0 47%;
+
+              .group {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p {
+                  padding-bottom: 2rem;
+                  @include sm(padding-bottom, 2.1rem);
+
+                }
+              }
+            }
+
+            &.sum {
+              flex: 0 0 34%;
+              @include lg(flex, 0 0 39%);
+              justify-content: flex-start;
+              @include sm(justify-content, space-between);
+              margin-left: 2rem;
+              @include sm(margin-left, auto);
+
+              .group {
+                flex-direction: column;
+                justify-content: space-between;
+
+                .delete {
+                  position: absolute;
+                  right: 0;
+                  bottom: 100px;
+                  @include sm(position, relative);
+                  @include sm(right, auto);
+                  @include sm(bottom, auto);
+
+                }
+              }
+            }
+          }
+        }
+
+        &:first-child {
+          border-top: 1px solid $secondary-color-medium;
+          @include sm(border-top, none);
+        }
+      }
+    }
+  }
+}
+
+.at-order-block {
+  position: relative;
+  flex-direction: column;
+  @include lg(position, relative);
+
+
+  &-container {
+    background-color: $secondary-color-light;
+    width: auto;
+
+    .sum-amount,
+    .delivery {
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .at-btn-checkout {
+      width: 100%;
+      @include sm('width', 220px);
+      @include lg('width', 100%);
+    }
+
+    .button{
+      width: 220px;
+      @include md(width, 100%);
+    }
+  }
+}
+
+.at-sticky-container {
+  position: sticky;
+  top: 10rem;
+}

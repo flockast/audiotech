@@ -1,0 +1,28 @@
+.properties {
+  color: $color-primary;
+
+  &__item {
+    border-bottom: 1px solid $secondary-color-medium;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.3rem 0;
+
+    @include sm-block() {
+      padding: 1.8rem 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--header {
+      @include caption-upper();
+      padding: 1rem 0;
+    }
+  }
+
+  &--no-header {
+    border-top: 1px solid $secondary-color-medium;
+    border-bottom: 1px solid $secondary-color-medium;
+  }
+}

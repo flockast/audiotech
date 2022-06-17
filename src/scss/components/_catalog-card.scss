@@ -1,0 +1,58 @@
+.catalog-card {
+  display: flex;
+  min-height: 18rem;
+  border: 1px solid $secondary-color-medium;
+  text-decoration: none;
+  color: $color-primary;
+  padding: 3.7rem 2rem 2.7rem 2rem;
+
+  @media (min-width: 360px) {
+    padding: 3.7rem 3.2rem 2.7rem 3.2rem;
+  }
+
+  @include sm-block () {
+    min-height: 100%;
+  }
+
+  @include lg-block () {
+    padding: 3.7rem 3rem 5.5rem 3rem;
+  }
+
+  &__icon {
+    margin-right: 3rem;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+    @include subtitle();
+
+    @include sm-block () {
+      hyphens: auto;
+    }
+
+    @include lg-block () {
+      hyphens: initial;
+    }
+  }
+
+  &__description {
+    color: $secondary-color-darken;
+  }
+
+  &:hover {
+    .catalog-card__title {
+      color: $color-accent;
+    }
+
+    .catalog-card__icon {
+      svg path {
+        fill: $color-accent;
+      }
+
+      .globus path {
+        fill: inherit;
+        stroke: $color-accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.container { @include wrapper(); }
+
+.container-fluid { @include wrapper-full(); }
+
+.row { @include row-flex(); }
+
+.row > * { @include col(); }
+
+.col { flex: 1 0 0; }
+
+@for $i from 0 to $columns {
+  .col-#{$i + 1} { @include size($i + 1); }
+}
+
+@for $i from 0 to $columns {
+  .sm\:col-#{$i + 1} { @include size-sm($i + 1); }
+}
+
+@for $i from 0 to $columns {
+  .md\:col-#{$i + 1} { @include size-md($i + 1); }
+}
+
+@for $i from 0 to $columns {
+  .lg\:col-#{$i} { @include size-lg($i); }
+}
+
+.container.example {
+  min-height: 100vh;
+  padding-top: 20px;
+  background: lavender;
+  [class^="col-"] {
+    background: cornflowerblue;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    padding: 20px 0;
+    margin-bottom: $offset;
+    @include sm('margin-bottom', $offset_sm);
+    @include md('margin-bottom', $offset_md);
+    @include lg('margin-bottom', $offset_lg);
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-column-gap: $offset;
+  @include sm(grid-column-gap, $offset_sm);
+  @include md(grid-column-gap, $offset_md);
+  @include lg(grid-column-gap, $offset_lg);
+}
+
+.grid {
+  @include grid();
+}
+
+.col--mb {
+  margin-bottom: 3rem;
+  @include sm(margin-bottom, 4rem);
+  @include md(margin-bottom, 6rem);
+}

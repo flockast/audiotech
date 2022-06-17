@@ -1,0 +1,24 @@
+.at-cards-list {
+  @include grid();
+  margin-bottom: 4rem;
+  grid-row-gap: 4rem;
+  @include sm-block {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 6rem;
+    margin-bottom: 6rem;
+  }
+  @include md-block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--grid {
+    grid-row-gap: $offset;
+    @include sm(grid-row-gap, $offset_sm);
+    @include md(grid-row-gap, $offset_md);
+    @include lg(grid-row-gap, $offset_lg);
+  }
+
+  &__item {
+
+  }
+}

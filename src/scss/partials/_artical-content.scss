@@ -1,0 +1,16 @@
+.at-article-content {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include md-block () {
+    width: 66.66666666%;
+  }
+
+  p {
+    margin-bottom: 3rem;
+
+    @include sm-block () {
+      margin-bottom: 4rem;
+    }
+  }
+}

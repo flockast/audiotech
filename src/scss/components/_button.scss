@@ -1,0 +1,110 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-accent;
+  color: $color-primary-inverse;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  padding: 1.05rem 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: .125s ease-in-out;
+
+  &__text {
+    border-right: 2px solid rgba($color-primary-inverse, .3);
+    padding-right: 2rem;
+    margin-right: 2rem;
+  }
+
+  &__icon {
+    position: relative;
+    display: block;
+    height: 2.4rem;
+
+    svg path {
+      fill: $color-primary-inverse;
+    }
+  }
+
+  &:hover {
+    color: $color-primary-inverse;
+    background: $color-accent-dark;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--large {
+    padding: 1.8rem 3rem;
+  }
+
+  &--default {
+    background: $secondary-color-light;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-accent;
+      color: $color-primary-inverse;
+    }
+  }
+
+  &--flat {
+    background: none;
+    color: $color-accent;
+    padding: 0;
+
+    &:hover {
+      background: $color-primary-inverse;
+      color: $color-accent-dark;
+    }
+  }
+
+  &--border {
+    background: none;
+    border: 1px solid $color-primary-inverse;
+
+    &:hover {
+      background: $color-primary-inverse;
+      color: $color-accent;
+
+      .button__icon {
+        svg path {
+          fill: $color-accent;
+        }
+      }
+
+      .button__text {
+        border-color: rgba($color-accent, .3);
+      }
+    }
+  }
+
+  &--white {
+    position: relative;
+    background: #fff;
+    color: $color-primary;
+    font-weight: normal;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &__text{
+      margin: 0;
+      padding: 0;
+    }
+
+    svg{
+      position: absolute;
+      left: 2.5rem;
+    }
+  }
+}

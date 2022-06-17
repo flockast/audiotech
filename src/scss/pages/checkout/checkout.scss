@@ -1,0 +1,26 @@
+.checkout-step {
+  margin-bottom: 8rem;
+
+  @include sm-block() {
+    margin-bottom: 10rem;
+  }
+
+  &__title {
+    display: flex;
+    @include title-h2();
+    margin-bottom: 4rem;
+
+    @include sm-block() {
+      margin-bottom: 6rem;
+    }
+
+    span {
+      color: $secondary-color-darken;
+      padding-right: 1rem;
+    }
+  }
+}
+
+.checkout-step:last-child {
+  margin-bottom: 0;
+}

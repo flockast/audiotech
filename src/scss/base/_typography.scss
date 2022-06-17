@@ -1,0 +1,195 @@
+@mixin super-monster-title {
+  font-size: 10rem;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 100;
+  @include sm-block () {
+    font-size: 15rem;
+  }
+}
+
+@mixin monster-title {
+  font-size: 8rem;
+  line-height: 1.1625;
+  letter-spacing: -0.02em;
+  font-weight: 100;
+}
+
+@mixin title-h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 6rem;
+    line-height: 1.166667;
+  }
+}
+
+@mixin title-h2 {
+  font-size: 3rem;
+  line-height: 1.333333;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+}
+
+@mixin title-h3 {
+  font-size: 2.8rem;
+  line-height: 1.285714;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 3rem;
+    line-height: 1.333333;
+  }
+}
+
+@mixin title-h3-sm {
+  font-size: 2.6rem;
+  line-height: 1.384615384615385;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 3rem;
+    line-height: 1.333333;
+  }
+}
+
+@mixin title-h4 {
+  font-size: 2.2rem;
+  line-height: 1.272727;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 2.4rem;
+    line-height: 1.333333;
+  }
+}
+
+@mixin subtitle {
+  font-size: 1.8rem;
+  line-height: 1.555555;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+}
+
+@mixin subtitle-bold {
+  font-size: 1.8rem;
+  line-height: 1.555555;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  @include sm-block () {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+}
+
+@mixin text-body  {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: normal;
+}
+
+@mixin text-body-bold {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+@mixin caption {
+  font-size: 1.3rem;
+  line-height: 1.153846;
+}
+
+@mixin caption-upper {
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.181818;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@mixin text-large {
+  font-weight: 300;
+  font-size: 8rem;
+  line-height: 1.1625;
+  letter-spacing: -0.02em;
+}
+
+.super-monster-title {
+  @include super-monster-title();
+}
+
+.monster-title {
+  @include monster-title();
+}
+
+h1, .title-h1 {
+  @include title-h1();
+}
+
+h2, .title-h2 {
+  @include title-h2();
+}
+
+h3, .title-h3 {
+  @include title-h3();
+}
+
+.title-h3-sm {
+  @include title-h3-sm();
+}
+
+h4, .title-h4 {
+  @include title-h4();
+}
+
+.subtitle {
+  @include subtitle()
+}
+
+.subtitle-bold {
+  @include subtitle-bold();
+}
+
+.text-body {
+  @include text-body()
+}
+
+.text-body-bold {
+  @include text-body-bold();
+}
+
+.caption {
+  @include caption();
+}
+
+.caption-upper {
+  @include caption-upper()
+}
+
+.text-large {
+  @include text-large();
+}
+
+.text-accent {
+  color: $color-accent;
+}
+
+.text-one-line {
+  white-space: nowrap;
+
+  &--md {
+    @include md-block() {
+      white-space: nowrap;
+    }
+  }
+}

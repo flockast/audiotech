@@ -1,0 +1,28 @@
+.image-fit {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+
+  @include sm-block () {
+    height: 40rem;
+  }
+
+  @include md-block () {
+    height: 55rem;
+  }
+
+  @include lg-block () {
+    height: 67rem;
+  }
+
+  &--small {
+    @include md-block () {
+      height: 34rem;
+    }
+
+    @include lg-block () {
+      height: 42rem;
+    }
+  }
+}

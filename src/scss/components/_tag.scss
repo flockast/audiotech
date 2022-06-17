@@ -1,0 +1,12 @@
+.tag {
+  display: inline-block;
+  background-color: $color-accent;
+  color: $color-primary-inverse;
+  @include caption-upper();
+  padding: .85rem 1.8rem;
+
+  &:hover {
+    background-color: $color-accent-dark;
+    color: $color-primary-inverse;
+  }
+}

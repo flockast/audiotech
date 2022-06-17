@@ -1,0 +1,29 @@
+.icon-link {
+  display: flex;
+  color: $secondary-color-darken;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    path {
+      fill: $secondary-color-darken;
+    }
+  }
+
+  &__icon {
+    margin-right: 1.5rem;
+  }
+
+  &__text {
+    @include subtitle();
+  }
+
+  &:hover {
+    color: $color-accent;
+
+    svg path {
+      fill: $color-accent;
+    }
+  }
+}

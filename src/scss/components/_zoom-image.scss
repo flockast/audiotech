@@ -1,0 +1,49 @@
+.zoom-image {
+  position: relative;
+  border: 1px solid $secondary-color-medium;
+  padding: .5rem;
+  cursor: pointer;
+  height: 42.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include md-block () {
+    height: 30rem;
+  }
+
+  @include lg-block () {
+    height: 37.5rem;
+  }
+
+  img {
+    display: block;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6rem;
+    height: 6rem;
+    margin-top: -3rem;
+    margin-left: -3rem;
+    border-radius: 50%;
+    background-color: $color-accent;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.1253 19.2497C12.9281 19.2494 14.6789 18.6459 16.099 17.5354L19.8458 21.282C20.2424 21.6785 20.8853 21.6785 21.2819 21.282C21.6785 20.8854 21.6785 20.2424 21.2819 19.8459L17.5351 16.0993C18.6463 14.6792 19.2502 12.928 19.2506 11.1249C19.2506 6.64502 15.6054 3 11.1253 3C6.64521 3 3 6.64502 3 11.1249C3 15.6047 6.64521 19.2497 11.1253 19.2497ZM11.1253 5.03122C14.4861 5.03122 17.2193 7.76422 17.2193 11.1249C17.2193 14.4855 14.4861 17.2185 11.1253 17.2185C7.76447 17.2185 5.03133 14.4855 5.03133 11.1249C5.03133 7.76422 7.76447 5.03122 11.1253 5.03122Z' fill='%23#{str-replace('#{$color-primary-inverse}', '#', '')}'/%3E%3C/svg%3E%0A");
+    background-size: 2.4rem 2.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: .2s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}

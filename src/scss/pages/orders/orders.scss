@@ -1,0 +1,102 @@
+.at-bar-tab {
+  &--right-exit {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 10%;
+    right: -15px;
+    @include sm(right, 0);
+
+    span {
+      display: none;
+      @include sm(display, block);
+      @include subtitle;
+      color: $secondary-color-darken;
+    }
+
+    svg {
+      margin-right: 0;
+      @include sm(margin-right, 1.7rem);
+
+      path {
+        fill: $secondary-color-darken;
+      }
+    }
+
+    &:hover {
+      span {
+        color: $color-accent;
+      }
+
+      svg {
+        path {
+          fill: $color-accent;
+        }
+      }
+    }
+  }
+
+  .at-tabs__menu {
+    .at-tabs-menu-list {
+      width: 92%;
+      @include sm(width, 83.3%);
+      @include md(width, 100%)
+    }
+  }
+}
+
+.at-order-status {
+  @include caption-upper;
+  color: #fff;
+  padding: .8rem 1.5rem;
+  background-color: $color-accent;
+  width: 100%;
+  max-width: 160px;
+}
+
+.button-list-orders {
+  margin-top: 6rem;
+  background-color: $secondary-color-light;
+  color: $color-primary;
+}
+
+.at-order-recipient-title {
+  @include subtitle;
+  margin-bottom: 3rem;
+}
+
+.at-order-recipient {
+  display: flex;
+  justify-content: space-between;
+  @include text-body;
+
+  &-item {
+    .at-order-recipient-description {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+
+      span {
+        color: $secondary-color-darken;
+      }
+
+      .color-tracker {
+        color: $color-danger;
+      }
+
+      .at-payment-status {
+        &--success {
+          color: $color-success;
+        }
+
+        &--warning {
+          color: $color-info;
+        }
+
+        &--fail {
+          color: $color-danger;
+        }
+      }
+    }
+  }
+}
