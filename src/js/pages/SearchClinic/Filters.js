@@ -3,7 +3,7 @@ import mockClinics from '../../data/clinics.js'
 import ClinicsList from './ClinicsList.js'
 import ClinicsMap from './ClinicsMap.js'
 
-const clinics = window.arClicnics || mockClinics
+const clinics = window.arClinics || mockClinics
 
 class Filters {
   constructor () {
