@@ -19,5 +19,13 @@
 
   &__desc {
     @include subtitle();
+
+    br {
+      display: none;
+
+      @include sm-block {
+        display: block;
+      }
+    }
   }
 }

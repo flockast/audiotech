@@ -10,10 +10,17 @@
 }
 
 .at-footer-logo {
+  width: 170px;
   margin-bottom: 4rem;
 
   @include sm-block {
+    width: 213px;
     margin-bottom: 4.5rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
   }
 }
 

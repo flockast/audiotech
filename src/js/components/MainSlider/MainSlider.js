@@ -1,4 +1,6 @@
-import { Swiper, Pagination, Navigation, Parallax, EffectFade } from 'swiper'
+import { Swiper, Pagination, Navigation, Parallax, EffectFade, Autoplay } from 'swiper'
+
+const AUTOPLAY_DELAY = 5000
 
 class MainSlider {
   constructor ($element) {
@@ -17,7 +19,7 @@ class MainSlider {
     this.$prev = this.$element.querySelector(`[${this.sliderPrevAttr}]`)
     this.$next = this.$element.querySelector(`[${this.sliderNextAttr}]`)
 
-    Swiper.use([Pagination, Navigation, Parallax, EffectFade])
+    Swiper.use([Pagination, Navigation, Parallax, EffectFade, Autoplay])
 
     this.slider = new Swiper(this.$container, {
       effect: 'fade',
@@ -37,9 +39,30 @@ class MainSlider {
       pagination: {
         el: this.$pagination,
         clickable: true,
-        type: getPaginationType(),
-        renderCustom: (_, current, total) => {
-          return `<span class="page-current">0${current}</span>/<span class="page-total">0${total}</span>`
+        type: 'custom',
+        renderCustom: (swiper, current, total) => {
+          return `
+            <div
+              class="progress-bullets"
+              style="--delay: ${AUTOPLAY_DELAY * 10}ms"
+            > 
+              ${
+                Array.from(Array(total).keys()).map((index) => {
+                  return current === index + 1
+                    ? `
+                      <div class="progress-bullet is-active">
+                        <svg>
+                          <circle cx="50%" cy="50%" r="9" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                    `
+                    : `
+                      <div class="progress-bullet"></div>
+                    `
+                }).join('')
+              }
+            </div>
+          `
         }
       },
 
@@ -48,16 +71,33 @@ class MainSlider {
         prevEl: this.$prev
       },
 
+      autoplay: {
+        delay: AUTOPLAY_DELAY,
+        disableOnInteraction: false
+      },
+
       on: {
         init: () => {
           this.$element.classList.add('has-initialized')
+        },
+
+        slideChange: () => {
+          setTimeout(() => {
+            const bullets = Array.from(this.$element.querySelectorAll('.progress-bullet'))
+            if (!bullets && !bullets.length) return
+            bullets.forEach((bullet, index) => {
+              bullet.addEventListener('click', () => {
+                this.slideTo(index + 1)
+              })
+            })
+          }, 10)
         }
       }
     })
+  }
 
-    function getPaginationType () {
-      return window.innerWidth < 1024 ? 'bullets' : 'custom'
-    }
+  slideTo (index) {
+    this.slider.slideTo(index)
   }
 }
 

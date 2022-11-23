@@ -29,6 +29,22 @@
     }
   }
 
+  &--large {
+    height: 100%;
+
+    .video-player__cover {
+      height: 100%;
+    }
+
+    .video-player__play {
+      @include sm-block {
+        width: 10rem;
+        height: 10rem;
+      }
+
+    }
+  }
+
   &--small {
     .video-player__play {
       width: 4.5rem;

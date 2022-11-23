@@ -1,0 +1,56 @@
+.at-preview-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 3rem;
+
+  @include sm-block {
+    gap: 4rem;
+  }
+
+  @include md-block {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: $color-accent;
+
+    @include sm-block {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.56;
+    letter-spacing: -0.02em;
+
+    @include sm-block {
+      font-size: 2rem;
+      line-height: 1.4;
+    }
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #737373;
+  }
+}

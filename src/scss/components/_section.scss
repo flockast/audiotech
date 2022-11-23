@@ -47,6 +47,17 @@ $banner-height-md: 45rem;
     text-align: center;
   }
 
+  &__desc {
+    margin-top: 6rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+
+    @include sm-block {
+      font-size: 2rem;
+    }
+  }
+
   &--accent {
     background: linear-gradient(180deg, #{$color-accent} 0%, #{$color-accent-dark} 100%);
     color: $color-primary-inverse;
@@ -140,6 +151,13 @@ $banner-height-md: 45rem;
     @include sm(margin-top, -#{$banner-height-sm / 2});
     @include md(margin-top, -#{$banner-height-md / 2});
   }
+
+  &--mask {
+    background-color: $color-accent;
+    background-image: url('../images/design/mask-logo.png');
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+  }
 }
 
 .at-section-banner {
@@ -156,9 +174,9 @@ $banner-height-md: 45rem;
 
   &__button {
     position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    right: 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .button {
       width: 100%;

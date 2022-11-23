@@ -1,0 +1,23 @@
+.at-partners-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  border-top: 1px solid $secondary-color-medium;
+  border-left: 1px solid $secondary-color-medium;
+
+  @include sm-block () {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include md-block () {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    border-bottom: 1px solid $secondary-color-medium;
+    border-right: 1px solid $secondary-color-medium;
+  }
+}

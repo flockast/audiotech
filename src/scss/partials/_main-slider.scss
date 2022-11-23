@@ -1,3 +1,12 @@
+@keyframes clock-animation {
+  0% {
+    stroke-dashoffset: 471;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 .at-main-slider {
   &__inner {
 
@@ -7,7 +16,7 @@
 .at-main-slider-container {
   position: relative;
   overflow: hidden;
-  background: #314147;
+  background: $color-primary;
 
   .parallax-bg {
     position: absolute;
@@ -67,6 +76,62 @@
 
       &-active {
         background: $color-accent;
+      }
+    }
+
+    .progress-bullets {
+      display: flex;
+      align-items: center;
+
+      & > * {
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .progress-bullet {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background: $secondary-color-medium;
+        content: '';
+      }
+
+      &.is-active {
+        &:after {
+          background: $color-accent;
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+
+        circle {
+          fill: transparent;
+          stroke: $color-accent;
+          stroke-width: 2px;
+          stroke-dasharray: 471;
+          stroke-dashoffset: 471;
+          animation: clock-animation 42000ms linear infinite;
+          transform: rotate(-90deg);
+          transform-origin: center;
+        }
       }
     }
   }
