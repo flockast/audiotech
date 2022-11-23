@@ -44,14 +44,14 @@ class MainSlider {
           return `
             <div
               class="progress-bullets"
-              style="--delay: ${AUTOPLAY_DELAY * 10}ms"
+              style="--delay: ${AUTOPLAY_DELAY}ms"
             > 
               ${
                 Array.from(Array(total).keys()).map((index) => {
                   return current === index + 1
                     ? `
                       <div class="progress-bullet is-active">
-                        <svg>
+                        <svg viewBox="0 0 20 20" width="20" height="20">
                           <circle cx="50%" cy="50%" r="9" stroke-linecap="round" />
                         </svg>
                       </div>
@@ -90,7 +90,7 @@ class MainSlider {
                 this.slideTo(index + 1)
               })
             })
-          }, 10)
+          })
         }
       }
     })

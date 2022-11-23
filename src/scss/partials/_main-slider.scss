@@ -1,6 +1,6 @@
 @keyframes clock-animation {
   0% {
-    stroke-dashoffset: 471;
+    stroke-dashoffset: 56.52; // PI * 2 * R
   }
   100% {
     stroke-dashoffset: 0;
@@ -126,9 +126,9 @@
           fill: transparent;
           stroke: $color-accent;
           stroke-width: 2px;
-          stroke-dasharray: 471;
-          stroke-dashoffset: 471;
-          animation: clock-animation 42000ms linear infinite;
+          stroke-dasharray: 56.52; // PI * 2 * R
+          stroke-dashoffset: 56.52; // PI * 2 * R
+          animation: clock-animation var(--delay) linear forwards;
           transform: rotate(-90deg);
           transform-origin: center;
         }
