@@ -3,6 +3,7 @@ import { Swiper, Pagination, Navigation } from 'swiper'
 class MultiSlider {
   constructor ($element) {
     this.paginationAttr = 'data-multi-slider-pagination'
+    this.container = 'data-multi-slider-container'
     this.prevAttr = 'data-multi-slider-prev'
     this.nextAttr = 'data-multi-slider-next'
     this._init($element)
@@ -10,13 +11,13 @@ class MultiSlider {
 
   _init ($element) {
     this.$pagination = $element.querySelector(`[${this.paginationAttr}]`)
+    this.$container = $element.querySelector(`[${this.container}]`)
     this.$prev = $element.querySelector(`[${this.prevAttr}]`)
     this.$next = $element.querySelector(`[${this.nextAttr}]`)
 
     Swiper.use([Pagination, Navigation])
 
-    this.slider = new Swiper($element, {
-
+    this.slider = new Swiper(this.$container, {
       loop: true,
       slidesPerView: 1,
       slidesPerGroup: 1,

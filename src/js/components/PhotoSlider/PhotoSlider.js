@@ -5,6 +5,7 @@ import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default'
 class PhotoSlider {
   constructor ($element) {
     this.paginationAttr = 'data-photo-slider-pagination'
+    this.container = 'data-photo-slider-container'
     this.prevAttr = 'data-photo-slider-prev'
     this.nextAttr = 'data-photo-slider-next'
     this.zoomImageAttr = 'data-zoom-image'
@@ -15,29 +16,34 @@ class PhotoSlider {
 
   _init () {
     this.$pagination = this.$element.querySelector(`[${this.paginationAttr}]`)
+    this.$container = this.$element.querySelector(`[${this.container}]`)
     this.$prev = this.$element.querySelector(`[${this.prevAttr}]`)
     this.$next = this.$element.querySelector(`[${this.nextAttr}]`)
 
     Swiper.use([Pagination, Navigation])
 
-    this.slider = new Swiper(this.$element, {
+    this.slider = new Swiper(this.$container, {
 
       loop: false,
 
       slidesPerView: 1,
+      slidesPerGroup: 1,
       spaceBetween: 20,
 
       breakpoints: {
         768: {
           slidesPerView: 2,
+          slidesPerGroup: 2,
           spaceBetween: 40
         },
         1024: {
           slidesPerView: 4,
+          slidesPerGroup: 4,
           spaceBetween: 40
         },
         1260: {
           slidesPerView: 4,
+          slidesPerGroup: 4,
           spaceBetween: 45
         }
       },
