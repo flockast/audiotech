@@ -1,4 +1,4 @@
-import { Swiper, Pagination, Navigation, Parallax, EffectFade, Autoplay } from 'swiper'
+import { Swiper, Pagination, Navigation, EffectFade, Autoplay } from 'swiper'
 
 const AUTOPLAY_DELAY = 5000
 
@@ -19,7 +19,9 @@ class MainSlider {
     this.$prev = this.$element.querySelector(`[${this.sliderPrevAttr}]`)
     this.$next = this.$element.querySelector(`[${this.sliderNextAttr}]`)
 
-    Swiper.use([Pagination, Navigation, Parallax, EffectFade, Autoplay])
+    this.$element.style.setProperty('--full-height', `${window.innerHeight}px`)
+
+    Swiper.use([Pagination, Navigation, EffectFade, Autoplay])
 
     this.slider = new Swiper(this.$container, {
       effect: 'fade',
@@ -31,8 +33,6 @@ class MainSlider {
       loop: true,
 
       speed: 250,
-
-      parallax: true,
 
       autoHeight: true,
 

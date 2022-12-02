@@ -19,19 +19,23 @@ class MultiSlider {
 
       loop: true,
       slidesPerView: 1,
+      slidesPerGroup: 1,
       spaceBetween: 20,
 
       breakpoints: {
         768: {
           slidesPerView: 2,
+          slidesPerGroup: 2,
           spaceBetween: 40
         },
         1024: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: 40
         },
         1260: {
           slidesPerView: 3,
+          slidesPerGroup: 3,
           spaceBetween: 45
         }
       },

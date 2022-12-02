@@ -54,7 +54,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(eot|ttf|woff|woff2)$/,
         use: [
           {
             loader: 'url-loader',
@@ -73,7 +73,7 @@ module.exports = {
       filename: 'css/[name].css'
     }),
     new ImageMinimizerPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
+      test: /\.(jpe?g|png|gif)$/i,
       minimizerOptions: {
         // Lossless optimization with custom option
         // Feel free to experiment with options for better result for you

@@ -19,5 +19,9 @@
     height: 180px;
     border-bottom: 1px solid $secondary-color-medium;
     border-right: 1px solid $secondary-color-medium;
+
+    @include sm-block () {
+      height: 220px;
+    }
   }
 }
