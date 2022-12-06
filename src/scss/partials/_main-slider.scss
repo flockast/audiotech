@@ -18,8 +18,12 @@
   overflow: hidden;
   background-color: $color-primary;
   background-image: url('../images/design/dots-wave.svg');
-  background-size: cover;
+  background-size: 260%;
   background-position: center 100%;
+
+  @include sm-block() {
+    background-size: cover;
+  }
 
   &__slides {
     //transition-delay: 2s;
