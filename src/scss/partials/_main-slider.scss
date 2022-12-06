@@ -190,16 +190,18 @@
     @include sm-block () {
       display: block;
       width: 500px;
-      margin-bottom: 10rem;
+      height: 14.8rem;
+      //margin-bottom: 10rem;
     }
 
     @include md-block () {
-      margin-bottom: 6rem;
+      //margin-bottom: 6rem;
     }
   }
 
   &__button {
-    margin-bottom: 3.3rem;
+    //margin-bottom: 3.3rem;
+    margin-bottom: 0;
 
     @include sm-block () {
       margin-bottom: 5.2rem;

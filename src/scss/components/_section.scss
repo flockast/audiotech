@@ -164,6 +164,7 @@ $banner-height-lg: 67rem;
     margin-top: -#{$banner-height / 2};
     @include sm(margin-top, -#{$banner-height-sm / 2});
     @include md(margin-top, -#{$banner-height-md / 2});
+    @include lg(margin-top, -#{$banner-height-lg / 2});
   }
 
   &--mask {
@@ -179,6 +180,7 @@ $banner-height-lg: 67rem;
   height: $banner-height;
   @include sm(height, $banner-height-sm);
   @include md(height, $banner-height-md);
+  @include lg(height, $banner-height-lg);
 
   img {
     width: 100%;
