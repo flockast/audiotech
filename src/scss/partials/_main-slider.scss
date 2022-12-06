@@ -166,7 +166,7 @@
     position: relative;
     z-index: 1;
     height: 100%;
-    padding: 2rem 0 0;
+    padding: 4rem 0 0;
     display: flex;
     flex-direction: column;
 
@@ -182,7 +182,7 @@
 
   &__title {
     @include title-h1();
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
     @include sm-block {
       margin-bottom: 3rem;
@@ -224,17 +224,20 @@
   }
 
   &__image {
-    margin: 0 -17px;
+    position: absolute;
+    bottom: 0;
+    left: -17px;
+    right: -17px;
 
     @include sm-block {
-      margin: -90px -30px 0;
+      left: -30px;
+      right: -30px;
     }
 
     @include md-block {
-      position: absolute;
       bottom: 0;
       right: 55px;
-      margin: 0;
+      left: initial;
     }
 
     img {
