@@ -31,7 +31,7 @@ class Accordion {
       options = options.replace(/\s/g, '').split(',')
     }
 
-    // Отркыть первый элемент
+    // Открыть первый элемент
     if (options) {
       if (options.includes('first-is-open')) {
         this.open(0)

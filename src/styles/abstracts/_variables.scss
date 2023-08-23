@@ -1,0 +1,58 @@
+/**
+ * Variables
+*/
+
+/* Typography */
+$font-family: 'Suisse Intl';
+$font-size: 1.5rem;
+$font-weight: normal;
+$font-style: normal;
+$line-height: 1.6;
+
+/* Grid setup */
+$columns: 12;
+$atom: calc(100% / $columns);
+
+$break_sm: 768px;
+$break_md: 1024px;
+$break_lg: 1260px;
+
+$container_max_width: 100%; // 300px + 60px
+$container_max_width_sm: 700px; // 640px + 60px
+$container_max_width_md: 1024px; // 980px + 44px
+$container_max_width_lg: 1260px;
+
+$offset: 20px;
+$offset_sm: 40px;
+$offset_md: 40px;
+$offset_lg: 45px;
+
+$offset_one_side: calc($offset / 2);
+$offset_sm_one_side: calc($offset_sm / 2);
+$offset_md_one_side: calc($offset_md / 2);
+$offset_lg_one_side: calc($offset_lg / 2);
+
+$fields: 30px;
+$fields_sm: 30px;
+$fields_md: 22px;
+$fields_lg: 30px;
+
+/* Colour palette */
+$color-accent: #DB1F26;
+$color-accent-dark: #ca1c23;
+$color-primary: #131313;
+$color-primary-inverse: #ffffff;
+
+$secondary-color-light: #F5F7FA;
+$secondary-color-medium: #E8EBED;
+$secondary-color-dark: #DDF0F8;
+$secondary-color-darken: #737373;
+
+$color-info: #3E8EAE;
+$color-danger: #FF0000;
+$color-success: #0BBC61;
+
+/* Transitions */
+$transition: .125s ease-in-out;
+
+/* Components */
