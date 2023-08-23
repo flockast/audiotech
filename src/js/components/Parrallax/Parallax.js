@@ -1,4 +1,4 @@
-import Rellax from 'Rellax'
+import Rellax from 'rellax'
 
 class Parallax {
   constructor ($element) {
