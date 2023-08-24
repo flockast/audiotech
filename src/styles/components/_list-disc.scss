@@ -1,0 +1,21 @@
+.at-list-disc {
+  li {
+    position: relative;
+    padding-left: 21px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $secondary-color-darken;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

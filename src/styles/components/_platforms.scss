@@ -1,0 +1,21 @@
+.at-platforms {
+  display: flex;
+
+  li {
+    img {
+      display: block;
+
+      @include md-block {
+        max-height: 60px;
+      }
+    }
+  }
+
+  li:not(:first-child) {
+    margin-left: 22px;
+
+    @include md-block {
+      margin-left: 30px;
+    }
+  }
+}

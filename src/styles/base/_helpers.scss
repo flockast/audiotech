@@ -229,3 +229,15 @@
 * Width
  */
 .ws-break-spaces { white-space: break-spaces; }
+
+/*
+* Hyphens
+ */
+.hyphens-on { hyphens: auto; }
+.hyphens-off { hyphens: none; }
+.sm\:hyphens-on { @include sm(hyphens, auto); }
+.sm\:hyphens-off { @include sm(hyphens, none); }
+.md\:hyphens-on { @include md(hyphens, auto); }
+.md\:hyphens-off { @include md(hyphens, none); }
+.lg\:hyphens-on { @include lg(hyphens, auto); }
+.lg\:hyphens-off { @include lg(hyphens, none); }

@@ -132,6 +132,10 @@ $banner-height-lg: 67rem;
     margin: 0;
   }
 
+  &--p-0 {
+    padding: 0;
+  }
+
   &--mt {
     margin-top: 4rem;
     @include sm(margin-top, 7rem);
