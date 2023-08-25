@@ -1,5 +1,5 @@
 .at-list-disc {
-  li {
+  & > li {
     position: relative;
     padding-left: 21px;
 
@@ -16,6 +16,10 @@
 
     &:not(:last-child) {
       margin-bottom: 1rem;
+    }
+
+    & > ul, ol {
+      margin-top: 1rem;
     }
   }
 }

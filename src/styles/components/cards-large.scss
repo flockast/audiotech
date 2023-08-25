@@ -1,0 +1,74 @@
+.at-cards-large {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 4rem;
+
+  @include sm-block {
+    gap: 6rem;
+  }
+
+  @include md-block {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6rem 4rem;
+  }
+
+  @include lg-block {
+    gap: 6rem 4.5rem;
+  }
+
+  &__item {
+
+  }
+}
+
+.at-card-large {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    height: 22rem;
+
+    @include sm-block {
+      height: 47rem;
+    }
+
+    @include md-block {
+      height: 34rem;
+    }
+
+    @include lg-block {
+      height: 42rem;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    @include title-h3();
+    margin-top: 2rem;
+
+    @include sm-block {
+      margin-top: 3rem;
+    }
+  }
+
+  &__description {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    @include sm-block {
+      margin-top: 3rem;
+      margin-bottom: 4.5rem;
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+  }
+}
