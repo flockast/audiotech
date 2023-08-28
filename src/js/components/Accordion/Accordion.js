@@ -34,7 +34,9 @@ class Accordion {
     // Открыть первый элемент
     if (options) {
       if (options.includes('first-is-open')) {
-        this.open(0)
+        setTimeout(() => {
+          this.open(0)
+        })
       }
     }
   }
