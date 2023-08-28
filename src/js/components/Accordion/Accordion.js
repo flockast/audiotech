@@ -35,7 +35,7 @@ class Accordion {
     if (options) {
       if (options.includes('first-is-open')) {
         setTimeout(() => {
-          this.open(0)
+          this.initialOpen(0)
         })
       }
     }
@@ -52,18 +52,23 @@ class Accordion {
   closeAll () {
     this.items.forEach(item => {
       item.$item.classList.remove('is-active')
-      item.$content.style.maxHeight = 0
+      item.$content.style.height = 0
     })
+  }
+
+  initialOpen (id) {
+    this.items[id].$item.classList.add('is-active')
+    this.items[id].$content.style.height = 'initial'
   }
 
   open (id) {
     this.items[id].$item.classList.add('is-active')
-    this.items[id].$content.style.maxHeight = this.items[id].$content.scrollHeight + 'px'
+    this.items[id].$content.style.height = this.items[id].$content.scrollHeight + 'px'
   }
 
   close (id) {
     this.items[id].$item.classList.remove('is-active')
-    this.items[id].$content.style.maxHeight = 0
+    this.items[id].$content.style.height = 0
   }
 
   destroy () {
